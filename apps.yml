@@ -1,0 +1,9 @@
+---
+hosts: area1
+remote_user: root
+tasks:
+       - name: Instalar icewm
+           apt: name=icewm state=latest
+       - name: Instalar
+            
+...
