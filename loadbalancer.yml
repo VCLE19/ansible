@@ -1,0 +1,7 @@
+---
+
+- name: Load balancer playnook
+  hosts: loadblancers
+  roles:
+    role: haproxy
+...
