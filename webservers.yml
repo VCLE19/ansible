@@ -5,3 +5,4 @@
   roles:
     - role: update_and_extrapackages
     - role: apache
+    - role: php
