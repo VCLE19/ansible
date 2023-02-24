@@ -2,5 +2,6 @@
 - name: "Load Balancer Playbook"
   hosts: loadbalancers
   roles:
+    - role: update_and_extrapackages
     - role: haproxy
 ...

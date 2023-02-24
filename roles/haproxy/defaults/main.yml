@@ -1,5 +1,4 @@
 ---
-haproxy_socket: /var/lib/haproxy/stats
 haproxy_chroot: /var/lib/haproxy
 haproxy_user: haproxy
 haproxy_group: haproxy
@@ -22,7 +21,7 @@ haproxy_backend_servers:
   - name: webserver-two
     address: 192.168.56.203
 
-#
+# Stats credentials
 haproxy_stats_url: '/haproxy?stats'
 haproxy_stats_user: 'root'
 haproxy_stats_password: 'root'
