@@ -21,14 +21,3 @@ mysql_users:
   - name: wpuser
     pass: wpuser
     priv: "*.*:ALL"
-
-mysql_hosts:
-  - 127.0.0.1
-  - ::1
-  - localhost
-
-mysql_nohosts:
-  - "{{ ansible_hostname }}"
-  - 127.0.0.1
-  - ::1
-  - localhost
