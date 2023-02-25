@@ -1,0 +1,7 @@
+---
+
+- name: Database servers playbook
+  hosts: dbservers
+  roles:
+    - role: update_and_extrapackages
+    - role: mysql

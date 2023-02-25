@@ -1,0 +1,6 @@
+---
+
+# Other important software
+extra_apps:
+  - vim
+  - ntp

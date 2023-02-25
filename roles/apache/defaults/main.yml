@@ -1,10 +1,5 @@
 ---
 
-# Other important software
-extra_apps:
-  - vim
-  - ntp
-
 # Apache apps
 apache_packages:
   - apache2
