@@ -4,3 +4,4 @@
 extra_apps:
   - vim
   - ntp
+  - unzip
