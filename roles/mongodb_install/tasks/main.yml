@@ -5,5 +5,32 @@
     name: "*"
     state: latest
 
-- name: Install MongoDB
-  apt: name=mongodb state=latest
+- name: Install wget
+  apt: name=wget state=latest
+
+- name: Install gpg
+  apt: name=gpg state=latest
+
+#- name: Download mongodb
+#  command: wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+
+- name: Add an Apt signing key, uses whichever key is at the URL
+  ansible.builtin.apt_key:
+    url: https://www.mongodb.org/static/pgp/server-5.0.asc
+    state: present
+
+#- name: Add mongodb repo
+#  command: echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+
+- name: Add specified repository into sources list using specified filename
+  ansible.builtin.apt_repository:
+    repo: deb http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main
+    state: present
+    filename: mongodb-org-5.0.list
+
+- name: Update repository
+  apt:
+    update_cache: yes
+
+- name: Install mongodb
+  apt: name=mongodb-org state=latest
