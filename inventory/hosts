@@ -1,0 +1,5 @@
+[webserver]
+webserver-nginx ansible_host=192.168.56.205 ansible_user=root
+
+[mongodb]
+dbserver-mongodb ansible_host=192.168.56.206 ansible_user=root

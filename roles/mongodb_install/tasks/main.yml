@@ -1,0 +1,9 @@
+---
+
+- name: Upgrade all packages to latest version
+  apt:
+    name: "*"
+    state: latest
+
+- name: Install MongoDB
+  apt: name=mongodb state=latest
