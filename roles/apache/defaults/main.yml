@@ -1,0 +1,33 @@
+---
+
+# Apache apps
+apache_packages:
+  - apache2
+  - apache2-utils
+
+apache_mods_enabled:
+  - rewrite.load
+
+# Configuration of Apache on Debian and Ubuntu
+apache_daemon: apache2
+apache_daemon_path: /usr/sbin/
+apache_server_root: /etc/apache2
+apache_conf_path: /etc/apache2
+
+# Configurations
+apache_vhosts_filename: "vhosts.conf"
+apache_vhosts_template: "vhosts.conf.j2"
+
+apache_listen_ip: "*"
+apache_listen_port: 80
+
+# First it'll search for PHP and then HTML
+apache_global_vhost_settings: |
+  DirectoryIndex index.php index.html
+
+apache_vhosts:
+  - servername: "intranet.net"
+    documentroot: "{{ webserver_root }}"
+
+apache_allow_override: "All"
+apache_options: "-Indexes +FollowSymLinks"

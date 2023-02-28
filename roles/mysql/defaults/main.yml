@@ -1,0 +1,23 @@
+---
+
+mysql_packages:
+  - python3-selinux
+  - mariadb-server
+  - python3-mysqldb
+
+mysql_service: mysql
+
+mysql_conf_dir: "/etc/mysql"
+
+mysql_port: 3306
+#mysql_bind_address: "192.168.56.202,192.168.56.203"
+mysql_bind_address: "0.0.0.0"
+mysql_root_db_pass: root
+
+mysql_db: 
+  - name: wordpressdb
+
+mysql_users:
+  - name: wpuser
+    pass: wpuser
+    priv: "*.*:ALL"

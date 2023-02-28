@@ -1,0 +1,9 @@
+---
+
+- name: Web servers playbook
+  hosts: webservers
+  roles:
+    - role: update_and_extrapackages
+    - role: apache
+    - role: php
+    - role: wordpress

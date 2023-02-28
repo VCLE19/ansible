@@ -1,7 +1,7 @@
 ---
-
-- name: Load balancer playnook
-  hosts: loadblancers
+- name: "Load Balancer Playbook"
+  hosts: loadbalancers
   roles:
-    role: haproxy
+    - role: update_and_extrapackages
+    - role: haproxy
 ...

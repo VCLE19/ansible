@@ -1,0 +1,5 @@
+---
+
+- name: Install the PHP packages
+  apt: name={{ php_packages }} state=latest
+  notify: restart apache2

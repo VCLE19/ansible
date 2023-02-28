@@ -1,0 +1,8 @@
+---
+
+- name: Update repository
+  apt:
+    update_cache: yes
+
+- name: Install other important software
+  apt: name={{ extra_apps }} state=latest
